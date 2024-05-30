@@ -30,7 +30,7 @@ jobs:
         run: ls
      # Compiles classes to test 
       - name: compile classes
-        working-directory: ./src
+        working-directory: ./KanbanBoards/src
         run: javac -cp "../testresources/junit-platform-console-standalone-1.6.0.jar" ./kanbanboards/KanbanBoards.java ./kanbanboards/Task.java  "../test/kanbanboards/KanbanBoardsTest.java"  "../test/kanbanboards/TaskTest.java"  
 
     # list contents of src to verify that classess compiled 
