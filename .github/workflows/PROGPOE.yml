@@ -31,7 +31,7 @@ jobs:
      # Compiles classes to test 
       - name: compile classes
         working-directory: ./KanbanBoards/src
-        run: javac -cp "../testresources/junit-platform-console-standalone-1.6.0.jar" ./kanbanboards/KanbanBoards.java ./kanbanboards/Task.java  "../test/kanbanboards/KanbanBoardsTest.java"  "../test/kanbanboards/TaskTest.java"  
+        run: javac -cp "../testresources/junit-platform-console-standalone-1.6.0.jar" ./kanbanboards/KanbanBoards.java ./kanbanboards/Login.java ./kanbanboards/Task.java  "../test/kanbanboards/KanbanBoardsTest.java"  "../test/kanbanboards/LoginTest.java" "../test/kanbanboards/TaskTest.java"  
 
     # list contents of src to verify that classess compiled 
       - name: List contents of src directory after compile
@@ -42,12 +42,12 @@ jobs:
        # copy compiled classes to test directory 
       - name : copy compiled classes to testresources directory 
         working-directory: ./src/kanbanboards
-        run: cp -t  "../../test/kanbanboards" KanbanBoards.class Task.class
+        run: cp -t  "../../test/kanbanboards" KanbanBoards.class Login.class Task.class
         
         #copy compiled tests 
       - name : copy compiled Test classes to testresources directory 
         working-directory: ./test/kanbanboards
-        run: cp -t  "../../testresources/" KanbanBoardsTest.class TaskTest.class
+        run: cp -t  "../../testresources/" KanbanBoardsTest.class LoginTest.class TaskTest.class
         
         # list contents or directory
       - name: List contents test package
